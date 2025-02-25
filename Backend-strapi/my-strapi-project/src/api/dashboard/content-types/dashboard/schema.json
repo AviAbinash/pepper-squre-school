@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dashboards",
+  "info": {
+    "singularName": "dashboard",
+    "pluralName": "dashboards",
+    "displayName": "dashboard",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "bannerSection": {
+      "displayName": "bannerImage",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.banner-image"
+    }
+  }
+}

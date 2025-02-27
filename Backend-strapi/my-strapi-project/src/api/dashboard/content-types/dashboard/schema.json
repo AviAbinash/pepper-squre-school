@@ -14,8 +14,11 @@
     "bannerSection": {
       "displayName": "bannerImage",
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "shared.banner-image"
+    },
+    "slug": {
+      "type": "uid"
     }
   }
 }

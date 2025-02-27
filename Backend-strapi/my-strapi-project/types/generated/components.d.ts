@@ -8,8 +8,8 @@ export interface SharedBannerImage extends Struct.ComponentSchema {
     icon: 'code';
   };
   attributes: {
-    banner: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
 }
@@ -19,6 +19,31 @@ export interface SharedButton extends Struct.ComponentSchema {
   info: {
     displayName: 'button';
     icon: 'apps';
+  };
+  attributes: {
+    isVisible: Schema.Attribute.Boolean;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedButtonGroup extends Struct.ComponentSchema {
+  collectionName: 'components_shared_button_groups';
+  info: {
+    description: '';
+    displayName: 'buttonGroup';
+    icon: 'book';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedButtonObj extends Struct.ComponentSchema {
+  collectionName: 'components_shared_button_objs';
+  info: {
+    description: '';
+    displayName: 'buttonObj';
+    icon: 'bell';
   };
   attributes: {
     isVisible: Schema.Attribute.Boolean;
@@ -102,6 +127,8 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'shared.banner-image': SharedBannerImage;
       'shared.button': SharedButton;
+      'shared.button-group': SharedButtonGroup;
+      'shared.button-obj': SharedButtonObj;
       'shared.media': SharedMedia;
       'shared.menu': SharedMenu;
       'shared.quote': SharedQuote;

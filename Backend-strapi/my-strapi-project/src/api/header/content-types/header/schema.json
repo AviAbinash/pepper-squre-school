@@ -17,21 +17,26 @@
     "mainmenu": {
       "type": "json"
     },
-    "button": {
-      "displayName": "button",
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.button"
-    },
     "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "csr": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.button-obj"
+    },
+    "donate": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.button-obj"
     }
   }
 }

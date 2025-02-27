@@ -22,7 +22,8 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::article.article",
-      "mappedBy": "category"
+      "mappedBy": "category",
+      "image":"true"
     },
     "description": {
       "type": "text"

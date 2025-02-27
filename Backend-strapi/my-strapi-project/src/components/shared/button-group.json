@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_button_groups",
+  "info": {
+    "displayName": "buttonGroup",
+    "icon": "book",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

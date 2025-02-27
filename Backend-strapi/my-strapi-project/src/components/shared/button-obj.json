@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_button_objs",
+  "info": {
+    "displayName": "buttonObj",
+    "icon": "bell",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "isVisible": {
+      "type": "boolean"
+    }
+  }
+}

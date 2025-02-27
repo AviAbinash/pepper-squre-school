@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_designs",
+  "info": {
+    "displayName": "design",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "companyName": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

@@ -12,6 +12,9 @@
     },
     "isVisible": {
       "type": "boolean"
+    },
+    "parag": {
+      "type": "string"
     }
   }
 }

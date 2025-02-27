@@ -6,8 +6,8 @@ import axios from "axios";
 import Card from "./Imagecard";
 const Tabsections = () => {
   const [activeTab, setActiveTab] = useState(0);
-  const [categories, setCategories] = useState([]);
-  const [articles, setArticles] = useState([]);
+  const [categories, setCategories] = useState<any>([]);
+  const [articles, setArticles] = useState<any>([]);
 
   useEffect(() => {
     async function fetchHeader() {
@@ -43,11 +43,20 @@ const Tabsections = () => {
 
   return (
     <>
-      <div className="mx-auto mt-10">
+      <div
+        className="mx-auto m-10"
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "5px",
+        }}
+      >
         {/* Tab buttons */}
-        <div className="flex border-b border-gray-300 text-gray-500 hover:text-blue-500">
+        <div className="flex  border-gray-300 text-gray-500 hover:text-blue-500">
           {/* <button className={`py-2 px-4 text-sm font-semibold`}>All</button> */}
-          {categories?.map((tab, index) => (
+          {categories?.map((tab:any, index:number) => (
             <button
               key={index}
               className={`py-2 px-4 text-sm font-semibold ${
@@ -55,6 +64,12 @@ const Tabsections = () => {
                   ? "border-b-2 border-blue-500 text-blue-500"
                   : "text-gray-500 hover:text-blue-500"
               }`}
+              style={{
+                width: "170px",
+                height: "54px",
+                borderRadius: "30px",
+                border: "1px solid",
+              }}
               //   onClick={() => setActiveTab(index)}
               onClick={() => handleArticle(index, tab)}
             >
@@ -64,11 +79,17 @@ const Tabsections = () => {
         </div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-10">
-        {articles?.map((ele, index) => (
+        {articles?.map((ele:any, index:number) => (
           <div key={index} className="">
             <Card element={ele} />
           </div>
         ))}
+      </div>
+      <div>
+        {" "}
+        <button className="text-white py-2 px-4 rounded-md" style={{}}>
+         rghergerg
+        </button>
       </div>
     </>
   );

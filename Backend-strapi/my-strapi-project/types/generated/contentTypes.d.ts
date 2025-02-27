@@ -531,6 +531,45 @@ export interface ApiDashboardDashboard extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFooterFooter extends Struct.CollectionTypeSchema {
+  collectionName: 'footers';
+  info: {
+    description: '';
+    displayName: 'footer';
+    pluralName: 'footers';
+    singularName: 'footer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    address: Schema.Attribute.String;
+    contactUs: Schema.Attribute.Component<'shared.contact', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    designBy: Schema.Attribute.Component<'shared.design', false>;
+    donate: Schema.Attribute.Component<'shared.button-obj', false>;
+    links: Schema.Attribute.Component<'shared.quick-links', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::footer.footer'
+    > &
+      Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    publishedAt: Schema.Attribute.DateTime;
+    rights: Schema.Attribute.Component<'shared.rights', false>;
+    slug: Schema.Attribute.UID;
+    social: Schema.Attribute.Component<'shared.social-links', true>;
+    tagLine: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -1110,6 +1149,7 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
       'api::dashboard.dashboard': ApiDashboardDashboard;
+      'api::footer.footer': ApiFooterFooter;
       'api::global.global': ApiGlobalGlobal;
       'api::header.header': ApiHeaderHeader;
       'plugin::content-releases.release': PluginContentReleasesRelease;

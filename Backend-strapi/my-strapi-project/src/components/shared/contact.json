@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_contacts",
+  "info": {
+    "displayName": "contact",
+    "icon": "connector"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    }
+  }
+}

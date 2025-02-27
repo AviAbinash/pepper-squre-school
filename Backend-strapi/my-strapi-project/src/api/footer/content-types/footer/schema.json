@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "footers",
+  "info": {
+    "singularName": "footer",
+    "pluralName": "footers",
+    "displayName": "footer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "tagLine": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "links": {
+      "displayName": "quickLinks",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.quick-links"
+    },
+    "contactUs": {
+      "displayName": "contact",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.contact"
+    },
+    "donate": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.button-obj"
+    },
+    "social": {
+      "displayName": "socialLinks",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.social-links"
+    },
+    "rights": {
+      "displayName": "rights",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.rights"
+    },
+    "designBy": {
+      "displayName": "design",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.design"
+    },
+    "slug": {
+      "type": "uid"
+    }
+  }
+}

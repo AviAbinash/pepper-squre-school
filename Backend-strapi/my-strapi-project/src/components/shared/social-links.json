@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_social_links",
+  "info": {
+    "displayName": "socialLinks",
+    "icon": "calendar"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

@@ -47,7 +47,48 @@ export interface SharedButtonObj extends Struct.ComponentSchema {
   };
   attributes: {
     isVisible: Schema.Attribute.Boolean;
+    parag: Schema.Attribute.String;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedContact extends Struct.ComponentSchema {
+  collectionName: 'components_shared_contacts';
+  info: {
+    displayName: 'contact';
+    icon: 'connector';
+  };
+  attributes: {
+    address: Schema.Attribute.String;
+    email: Schema.Attribute.Email;
+    phone: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedDesign extends Struct.ComponentSchema {
+  collectionName: 'components_shared_designs';
+  info: {
+    displayName: 'design';
+    icon: 'bulletList';
+  };
+  attributes: {
+    companyName: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    name: Schema.Attribute.String;
+  };
+}
+
+export interface SharedLinks extends Struct.ComponentSchema {
+  collectionName: 'components_shared_links';
+  info: {
+    displayName: 'links';
+    icon: 'connector';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    url: Schema.Attribute.String;
   };
 }
 
@@ -71,6 +112,19 @@ export interface SharedMenu extends Struct.ComponentSchema {
   attributes: {};
 }
 
+export interface SharedQuickLinks extends Struct.ComponentSchema {
+  collectionName: 'components_shared_quick_links';
+  info: {
+    description: '';
+    displayName: 'quickLinks';
+    icon: 'clock';
+  };
+  attributes: {
+    links: Schema.Attribute.Component<'shared.links', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedQuote extends Struct.ComponentSchema {
   collectionName: 'components_shared_quotes';
   info: {
@@ -92,6 +146,18 @@ export interface SharedRichText extends Struct.ComponentSchema {
   };
   attributes: {
     body: Schema.Attribute.RichText;
+  };
+}
+
+export interface SharedRights extends Struct.ComponentSchema {
+  collectionName: 'components_shared_rights';
+  info: {
+    displayName: 'rights';
+    icon: 'briefcase';
+  };
+  attributes: {
+    name: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -122,6 +188,18 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSocialLinks extends Struct.ComponentSchema {
+  collectionName: 'components_shared_social_links';
+  info: {
+    displayName: 'socialLinks';
+    icon: 'calendar';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    name: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -129,12 +207,18 @@ declare module '@strapi/strapi' {
       'shared.button': SharedButton;
       'shared.button-group': SharedButtonGroup;
       'shared.button-obj': SharedButtonObj;
+      'shared.contact': SharedContact;
+      'shared.design': SharedDesign;
+      'shared.links': SharedLinks;
       'shared.media': SharedMedia;
       'shared.menu': SharedMenu;
+      'shared.quick-links': SharedQuickLinks;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
+      'shared.rights': SharedRights;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.social-links': SharedSocialLinks;
     }
   }
 }

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_rights",
+  "info": {
+    "displayName": "rights",
+    "icon": "briefcase"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}
